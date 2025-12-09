@@ -57,6 +57,7 @@ void dealCardToHand(List<Card> deck, List<Card> hand) {
   }
 }
 
+// prints out the hands in a fancy way
 void printHands(List<Hand> hands) {
   stdout.write(hands.map((h) => "${colors[h.color]}${h.name}\x1b[0m").join("\n"));
   stdout.write("\x1b[?25l\x1b[s\x1b[3A");
@@ -70,6 +71,7 @@ void printHands(List<Hand> hands) {
   }
 }
 
+// defines all the ansi colors
 const Map<Color, String> colors = {
   Color.red: "\x1b[31m",
   Color.blue: "\x1b[34m",
