@@ -12,6 +12,8 @@ void main() {
 
   List<poker_game.Card> deck = poker_game.createDeck();
 
+  print("deck contains: ${deck.join(", ")}\n");
+
   // deal cards into each hand
   for (var i = 0; i < 4; i++) {
     for (final h in hands) {
@@ -38,16 +40,14 @@ void main() {
       .toList();
 
   poker_game.printHands(hands);
-
-  stdout.write("\x1b[u\n");
-
+  print("\ndeck contains: ${deck.join(", ")}\n");
   // check if there was a tie
   if (winningHands.length > 1) {
     print(
       "game ended in tie:\n $bestHandValue.${winningHands.map((i) => hands[i].name).join("/n")}",
     );
   } else {
-    print("${hands[winningHands[0]]} won!");
+    print("${hands[winningHands[0]].name} won with a total of $bestHandValue!");
   }
 
   // unhide the cursor

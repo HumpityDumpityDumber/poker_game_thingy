@@ -69,6 +69,7 @@ void printHands(List<Hand> hands) {
       stdout.write(" $c");
     }
   }
+  stdout.write("\x1b[u\n");
 }
 
 // defines all the ansi colors
