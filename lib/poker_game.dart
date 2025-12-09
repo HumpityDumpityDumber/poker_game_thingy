@@ -60,7 +60,7 @@ void dealCardToHand(List<Card> deck, List<Card> hand) {
 // prints out the hands in a fancy way
 void printHands(List<Hand> hands) {
   stdout.write(hands.map((h) => "${colors[h.color]}${h.name}\x1b[0m").join("\n"));
-  stdout.write("\x1b[?25l\x1b[s\x1b[3A");
+  stdout.write("\x1b[?25l\x1b[s\x1b[${hands.length}A");
   for (final h in hands) {
     sleep(Duration(seconds: 1));
     stdout.write("\x1b[E\x1b[${h.name.length + 1}G");

@@ -8,11 +8,12 @@ void main() {
     poker_game.Hand("Gary", [], poker_game.Color.pink),
     poker_game.Hand("Sarah", [], poker_game.Color.red),
     poker_game.Hand("Billy", [], poker_game.Color.blue),
+    poker_game.Hand("Brenden", [], poker_game.Color.green)
   ];
 
   List<poker_game.Card> deck = poker_game.createDeck();
 
-  print("deck contains: ${deck.join(", ")}\n");
+  print("deck contains: ${deck.join(" ")}\n");
 
   // deal cards into each hand
   for (var i = 0; i < 4; i++) {
@@ -40,14 +41,16 @@ void main() {
       .toList();
 
   poker_game.printHands(hands);
-  print("\ndeck contains: ${deck.join(", ")}\n");
+
+  print("\ndeck contains: ${deck.join(" ")}\n");
+  
   // check if there was a tie
   if (winningHands.length > 1) {
     print(
       "game ended in tie:\n $bestHandValue.${winningHands.map((i) => hands[i].name).join("/n")}",
     );
   } else {
-    print("${hands[winningHands[0]].name} won with a total of $bestHandValue!");
+    print("${poker_game.colors[hands[winningHands[0]].color]}${hands[winningHands[0]].name}\x1b[0m won with a total of $bestHandValue!");
   }
 
   // unhide the cursor
