@@ -37,7 +37,7 @@ class Hand {
   Hand(this.name, this.cards, this.color);
 
   @override
-  String toString() => "${colors[color]}$name\x1b[0m with ${cards.join(" ")}";
+  String toString() => "${colors[color]}$name\x1b[0m has ${cards.join(" ")}";
 }
 
 List<Card> createDeck() {

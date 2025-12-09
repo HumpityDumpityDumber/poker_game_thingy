@@ -47,10 +47,10 @@ void main() {
   // check if there was a tie
   if (winningHands.length > 1) {
     print(
-      "game ended in tie:\n $bestHandValue.${winningHands.map((i) => hands[i].name).join("/n")}",
+      "game ended in tie of $bestHandValue\nwinners:\n${winningHands.map((i) => hands[i]).join("\n")}",
     );
   } else {
-    print("${poker_game.colors[hands[winningHands[0]].color]}${hands[winningHands[0]].name}\x1b[0m won with a total of $bestHandValue!");
+    print("${hands[winningHands[0]]}\x1b[0m and won with a total of $bestHandValue!");
   }
 
   // unhide the cursor
